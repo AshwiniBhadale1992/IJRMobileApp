@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>User Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="font-size: 10px;">
+  <ion-segment value="1" [(ngModel)]="segment">
+    <ion-segment-button value="1" layout="icon-end"  >
+    <ion-label>Password</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="2"  layout="icon-end" >
+      <ion-label>Memorable data</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="3" layout="icon-end" >
+      <ion-label>Personal Options</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+    <div [ngSwitch]="segment">
+      <ion-list *ngSwitchCase="'1'">
+        <app-change-password ></app-change-password>
+      </ion-list>
+      <ion-list *ngSwitchCase="'2'">
+        <app-change-memorable-data ></app-change-memorable-data>
+
+      </ion-list>
+      <ion-list *ngSwitchCase="'3'">
+        <app-user-settings></app-user-settings>
+      </ion-list>
+  </div>
+
+
+
+</ion-content>
