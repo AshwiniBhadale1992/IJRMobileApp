@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'View Surgeon Report',
-      url: '/auth/view-surgeon-report',
+      url: '/auth/surgeon-report',
       icon: 'information-circle'
     },
     {

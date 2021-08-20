@@ -8,14 +8,14 @@ const routes: Routes = [
     path: '',
     component: AuthPage
   },
-  {
+ /*  {
     path: 'login',
     loadChildren: () => import('../Auth/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'forgot-password',
     loadChildren: () => import('../Auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
-  }
+  } */
 ];
 
 @NgModule({

@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: PagesPage
   },
-  {
+  /* {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
@@ -32,7 +32,7 @@ const routes: Routes = [
   {
     path: 'manage-surgeons',
     loadChildren: () => import('./manage-surgeons/manage-surgeons.module').then( m => m.ManageSurgeonsPageModule)
-  }
+  } */
 ];
 
 @NgModule({
