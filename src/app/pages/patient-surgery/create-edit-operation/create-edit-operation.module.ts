@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { CreateEditOperationPageRoutingModule } from './create-edit-operation-routing.module';
 
 import { CreateEditOperationPage } from './create-edit-operation.page';
+import { DetailsComponent } from './patient-surgery-dashboard/details/details.component';
+import { ProceduresComponent } from './patient-surgery-dashboard/procedures/procedures.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { CreateEditOperationPage } from './create-edit-operation.page';
     IonicModule,
     CreateEditOperationPageRoutingModule
   ],
-  declarations: [CreateEditOperationPage]
+  declarations: [CreateEditOperationPage,DetailsComponent,ProceduresComponent]
 })
 export class CreateEditOperationPageModule {}

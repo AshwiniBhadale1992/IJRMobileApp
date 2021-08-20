@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   appPages = [
     {
       title: 'Create New Operation',
-      url: '/app/tabs/schedule',
+      url: '/patient-surgery/create-edit-operation',
       icon: 'calendar'
     },
     {

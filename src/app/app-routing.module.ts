@@ -4,30 +4,6 @@ import { AuthPageModule } from './pages/auth/auth.module';
 
 
 const routes: Routes = [
- /*  {
-    path: '',
-    redirectTo: '/auth/login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'auth',
-    loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
-  },
-  {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then( m => m.PagesPageModule)
-  },
-  {
-    path: 'auth/home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
-
-   {
-     path: 'auth/surgeon-report',
-     loadChildren: () => import('./pages/surgeon-report/surgeon-report.module').then( m => m.SurgeonReportPageModule)
-  }, */
-
-
   {
     path: '',
     redirectTo: 'auth/login',
@@ -77,9 +53,8 @@ const routes: Routes = [
         ]
       },
     ]
-  },
-  // /app/ redirect
-
+  }
+  
 ];
 
 @NgModule({
