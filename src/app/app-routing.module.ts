@@ -27,6 +27,11 @@ const routes: Routes = [
   {
     path: 'auth/view-surgeon-report',
     loadChildren: () => import('./pages/surgeon-report/surgeon-report.module').then(m=>m.SurgeonReportPageModule)
+  },
+  {
+    path: 'patient-surgery/create-edit-operation',
+    loadChildren: () => import('./pages/patient-surgery/create-edit-operation/create-edit-operation.module').then(m=>m.CreateEditOperationPageModule)
+
   }
 ];
 

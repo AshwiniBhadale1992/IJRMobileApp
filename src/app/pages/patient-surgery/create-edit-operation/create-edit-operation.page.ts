@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateEditOperationPage implements OnInit {
 
-  constructor() { }
+  SurgeryDetailsTab = "1";
+
+  constructor() { 
+ 
+  }
 
   ngOnInit() {
+ 
   }
 
 }

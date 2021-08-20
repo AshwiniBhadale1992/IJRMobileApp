@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>CreateEditOperation</ion-title>
+  <ion-toolbar color='primary'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>IJR Number : 100357</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="font-size: 10px;">
+  <ion-segment value="1" [(ngModel)]="SurgeryDetailsTab">
+    <ion-segment-button value="1" layout="icon-end"  >
+    <ion-label>Details</ion-label>
+    </ion-segment-button>
 
+    <ion-segment-button value="2"  layout="icon-end" >
+      <ion-label>Procedures</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+    <div [ngSwitch]="SurgeryDetailsTab">
+      <ion-list *ngSwitchCase="'1'">
+        <app-details></app-details>
+      </ion-list>
+      <ion-list *ngSwitchCase="'2'">
+        <app-procedures></app-procedures>
+      </ion-list>  
+  </div>
 </ion-content>
