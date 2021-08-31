@@ -31,22 +31,22 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'User Profile Setting',
-      url: '/auth/user-profile',
+      url: '/auth/systemfunctions/userprofile',
       icon: 'map'
     },
     {
       title: 'Surgeon Profile',
-      url: '/app/tabs/about',
+      url: '/auth/systemfunctions/surgeonprofile',
       icon: 'information-circle'
     },
     {
       title: 'View Surgeon Report',
-      url: '/auth/surgeon-report',
+      url: '/auth/surgeon/surgeon-report',
       icon: 'information-circle'
     },
     {
       title: 'Manage Surgeons',
-      url: '/app/tabs/about',
+      url: '/auth/surgeon/manage-surgeons',
       icon: 'information-circle'
     },
     {

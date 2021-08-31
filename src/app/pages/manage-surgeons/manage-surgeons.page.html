@@ -1,9 +1,47 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ManageSurgeons</ion-title>
+  <ion-toolbar color='primary'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Manage Surgeons</ion-title>
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content style="font-size: 10px;">
+  <ion-segment value="1" [(ngModel)]="manageSurgeonSegment">
+    <ion-segment-button value="1" layout="icon-end"  >
+    <ion-label>Surgeons</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="2"  layout="icon-end" >
+      <ion-label>Your Surgeons</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+    <div [ngSwitch]="manageSurgeonSegment">
+      <ion-list *ngSwitchCase="'1'">
+          <div class="divManageSurgeon">
+            <ion-row>
+              <ion-col>
+                <ion-button type="button" color="primary"   (click)="openSearchSurgeon()" expand="block">Search Surgeons</ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-button type="button" color="primary" (click)="addSurgeon()"  expand="block">Add Surgeons</ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+      </ion-list>
+      <ion-list *ngSwitchCase="'2'">
+          <app-surgeons></app-surgeons>
+      </ion-list>
+
+  </div>
+
+
 
 </ion-content>
