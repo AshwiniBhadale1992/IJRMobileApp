@@ -1,3 +1,280 @@
-<p>
-  patient-identifier works!
-</p>
+<ion-content>
+  <ion-header>
+
+    <ion-toolbar color='primary'>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title size="small">IJR Number : 100357</ion-title>
+      <ion-title>Patient Identifier</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="patientIdentifier" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          
+          <div padding>
+            <div class="form-group">
+              <ion-label>First name</ion-label>
+            <ion-item>        
+              <ion-input class="form-control" type="text" id="FirstName" formControlName = "FirstName"
+              [ngModel] = "FirstName" name = "FirstName"></ion-input>
+            </ion-item>
+  
+            <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
+              <div *ngIf="f.FirstName.errors.required">
+                First name is required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <ion-label>Middle name</ion-label>
+          <ion-item>
+            <ion-input class="form-control" type="text" id="MiddleName" formControlName = "MiddleName"></ion-input>
+          </ion-item>
+  
+          <div *ngIf="submitted && f.MiddleName.errors" class="invalid-feedback">
+            <div *ngIf="f.MiddleName.errors.required">
+              Middle name is required
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <ion-label>Surname</ion-label>
+        <ion-item>
+          <ion-input class="form-control" type="text" id="SurName" formControlName = "SurName"></ion-input>
+        </ion-item>
+
+        <div *ngIf="submitted && f.SurName.errors" class="invalid-feedback">
+          <div *ngIf="f.SurName.errors.required">
+            Surname is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <ion-label>Gender</ion-label>
+      <ion-item>
+        
+        <ion-select placeholder="--Select--" id="Gender" formControlName = "Gender">
+          <ion-select-option value="1">Male</ion-select-option>
+          <ion-select-option value="2">Female</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div *ngIf="submitted && f.Gender.errors" class="invalid-feedback">
+        <div *ngIf="f.Gender.errors.required">
+          Gender is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <ion-label>Date Of birth</ion-label>
+    <ion-item>
+      <!-- <ion-input class="form-control" type="text" id="DOB" formControlName = "DOB"></ion-input> -->
+      <ion-datetime displayFormat="DDDD MMM D, YYYY" min="2005" max="2016" value="2008-09-02"
+      id="DOB" formControlName = "DOB"></ion-datetime>
+    </ion-item>
+
+    <div *ngIf="submitted && f.DOB.errors" class="invalid-feedback">
+      <div *ngIf="f.DOB.errors.required">
+        Date of birth is required
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <ion-label>Age</ion-label>
+  <ion-item>
+    <ion-input class="form-control" type="text" id="Age" formControlName = "Age"></ion-input>
+  </ion-item>
+</div>
+
+<div class="form-group">
+  <ion-label>Mobile number</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="MobileNo" formControlName = "MobileNo"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.MobileNo.errors" class="invalid-feedback">
+  <div *ngIf="f.MobileNo.errors.required">
+    Mobile number is required
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <ion-label>Residence phone</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="ResidencePhoneNo" formControlName = "ResidencePhoneNo"></ion-input>
+</ion-item>
+</div>
+
+
+<div class="form-group">
+  <ion-label>Email</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="Email" formControlName = "Email"></ion-input>
+</ion-item>
+</div>
+
+<div class="form-group">
+  <ion-label>Address 1</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="Address1" formControlName = "Address1"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.Address1.errors" class="invalid-feedback">
+  <div *ngIf="f.Address1.errors.required">
+    Address 1 is required
+  </div>
+</div>
+</div>
+
+
+<div class="form-group">
+  <ion-label>Address 2</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="Address2" formControlName = "Address2"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.Address2.errors" class="invalid-feedback">
+  <div *ngIf="f.Address2.errors.required">
+    Address 2 is required
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <ion-label>Address 3</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="Address3" formControlName = "Address3"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.Address3.errors" class="invalid-feedback">
+  <div *ngIf="f.Address3.errors.required">
+    Address 3 is required
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <ion-label>City</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="City" formControlName = "City"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.City.errors" class="invalid-feedback">
+  <div *ngIf="f.City.errors.required">
+    City is required
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <ion-label>State</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="State" formControlName = "State"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.State.errors" class="invalid-feedback">
+  <div *ngIf="f.State.errors.required">
+    State is required
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <ion-label>Country</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="Country" formControlName = "Country"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
+  <div *ngIf="f.Country.errors.required">
+    Country is required
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <ion-label>Postcode</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="Postcode" formControlName = "Postcode"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && f.Postcode.errors" class="invalid-feedback">
+  <div *ngIf="f.Postcode.errors.required">
+    Postcode is required
+  </div>
+</div>
+</div>
+
+
+<div class="form-group">
+  <ion-label>Overseas address</ion-label>
+<ion-item>
+  <ion-checkbox class="form-control" color="primary" id="OverseasAddress" formControlName = "OverseasAddress"></ion-checkbox>
+</ion-item>
+</div>
+
+<div class="form-group">
+  <ion-label>Patient identifying type</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="PatientIdentifierType" formControlName = "PatientIdentifierType"></ion-input>
+
+  <ion-select placeholder="Select One" id="PatientIdentifierType" formControlName = "PatientIdentifierType">
+    <ion-select-option value="Pan">Pan</ion-select-option>
+    <ion-select-option value="Adhaar">Adhaar</ion-select-option>
+    <ion-select-option value="Passport">Passport</ion-select-option>
+    <ion-select-option value="HealthId">Health Id</ion-select-option>
+    <ion-select-option value="Other">Other</ion-select-option>
+  </ion-select>
+
+</ion-item>
+</div>
+
+
+<div class="form-group">
+  <ion-label>Patient identifier number</ion-label>
+<ion-item>
+  <ion-input class="form-control" type="text" id="PatientIdentifierNo" formControlName = "PatientIdentifierNo"></ion-input>
+</ion-item>
+</div>
+
+  
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" expand="block" >Submit</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="back" aria-disabled="true">
+      <ion-icon name="chevron-back" ></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="reorder-three"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="today"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="RedirectTo('operation-details')">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

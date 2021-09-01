@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthPageModule } from './pages/auth/auth.module';
+import { PatientDetailsComponent } from './pages/patient-surgery/create-edit-operation/PatientDetails/patient-details/patient-details.component';
+import { OperationDetailsComponent } from './pages/patient-surgery/create-edit-operation/PatientDetails/operation-details/operation-details.component';
+import { PatientIdentifierComponent } from './pages/patient-surgery/create-edit-operation/PatientDetails/patient-identifier/patient-identifier.component';
+import { SurgeonDetailsComponent } from './pages/patient-surgery/create-edit-operation/PatientDetails/surgeon-details/surgeon-details.component';
 
 
 const routes: Routes = [
@@ -67,6 +70,32 @@ const routes: Routes = [
 
         ]
       },
+      {
+        path: 'patient-surgery',
+        children: [
+          {
+            path: 'create-edit-operation/:id',
+            loadChildren: () => import('./pages/patient-surgery/create-edit-operation/create-edit-operation.module').then(m=>m.CreateEditOperationPageModule)
+          },
+          {
+            path: 'patient-details',
+            component : PatientDetailsComponent
+          },
+          {
+            path: 'patient-identifier',
+            component : PatientIdentifierComponent
+          },
+          {
+            path: 'operation-details',
+            component : OperationDetailsComponent
+          },
+          {
+            path: 'surgeon-details',
+            component : SurgeonDetailsComponent
+          },
+         
+        ]
+      }
     ]
   }
   

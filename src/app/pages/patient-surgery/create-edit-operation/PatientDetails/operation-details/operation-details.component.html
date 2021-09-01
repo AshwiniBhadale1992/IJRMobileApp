@@ -1,3 +1,128 @@
-<p>
-  operation-details works!
-</p>
+<ion-content>
+  <ion-header>
+
+    <ion-toolbar color='primary'>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title size="small">IJR Number : 100357</ion-title>
+      <ion-title>Operation Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="operationdetails" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          
+          <div padding>
+            <div class="form-group">
+              <ion-label>Hospital</ion-label>
+              <ion-item>
+        
+                <ion-select placeholder="--Select--" id="HospitalId" formControlName = "HospitalId">
+                  <ion-select-option value="1">Krishna shalby Hospital</ion-select-option>
+                  <ion-select-option value="2">Test Hospital</ion-select-option>
+                </ion-select>
+              </ion-item>
+  
+            <div *ngIf="submitted && f.HospitalId.errors" class="invalid-feedback">
+              <div *ngIf="f.HospitalId.errors.required">
+                Please select Hospital
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <ion-label>Operation Date</ion-label>
+            <ion-item>
+              <ion-datetime displayFormat="DDDD MMM D, YYYY" min="2005" max="2016" value="2008-09-02"
+              id="OperationDate" formControlName = "OperationDate"></ion-datetime>
+            </ion-item>
+  
+          <div *ngIf="submitted && f.OperationDate.errors" class="invalid-feedback">
+            <div *ngIf="f.OperationDate.errors.required">
+              Please select Operation Date
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <ion-label>Anesthetic types</ion-label>
+        <ion-item>
+          <ion-select placeholder="--Select--" id="AnestheticTypes" formControlName = "AnestheticTypes">
+            <ion-select-option value="1">General</ion-select-option>
+            <ion-select-option value="2">Nerve Block</ion-select-option>
+            <ion-select-option value="3">Epidural</ion-select-option>
+            <ion-select-option value="4">Spinal (intrathecal)</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <div *ngIf="submitted && f.AnestheticTypes.errors" class="invalid-feedback">
+          <div *ngIf="f.AnestheticTypes.errors.required">
+            Please select Anesthetic types
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <ion-label>Patient ASA grade</ion-label>
+      <ion-item>  
+        <ion-select placeholder="--Select--" id="PatientASAGrade" formControlName = "PatientASAGrade">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div *ngIf="submitted && f.PatientASAGrade.errors" class="invalid-feedback">
+        <div *ngIf="f.PatientASAGrade.errors.required">
+         Please select Patient ASA grade 
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <ion-label>Operation Funding</ion-label>
+    <ion-item>  
+      <ion-select placeholder="--Select--" id="OperationFunding" formControlName = "OperationFunding">
+        <ion-select-option value="1">Insurance</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="submitted && f.OperationFunding.errors" class="invalid-feedback">
+      <div *ngIf="f.OperationFunding.errors.required">
+       Please select Operation Funding
+      </div>
+    </div>
+  </div>
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" expand="block" >Submit</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="back" aria-disabled="true">
+      <ion-icon name="chevron-back" ></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="reorder-three"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="today"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="RedirectTo('surgeon-details')">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

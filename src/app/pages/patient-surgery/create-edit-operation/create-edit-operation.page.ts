@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-create-edit-operation',
@@ -7,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateEditOperationPage implements OnInit {
 
-  SurgeryDetailsTab = "1";
+  SurgeryDetailsTab : string ;
 
-  constructor() { 
+  constructor(private route: ActivatedRoute) { 
  
   }
 
-  ngOnInit() {
- 
+  ngOnInit(): void {
+    debugger;
+    this.route.paramMap.subscribe((params : ParamMap) => 
+    this.SurgeryDetailsTab = params.get('id'));
   }
 
 }

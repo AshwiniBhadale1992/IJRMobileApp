@@ -1,3 +1,123 @@
-<p>
-  surgeon-details works!
-</p>
+<ion-content>
+  <ion-header>
+
+    <ion-toolbar color='primary'>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title size="small">IJR Number : 100357</ion-title>
+      <ion-title>Surgeon Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="surgeondetails" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          
+          <div padding>
+            <div class="form-group">
+              <ion-label>Consultant in charge</ion-label>
+              <ion-item>
+        
+                <ion-select placeholder="--Select--" id="ConsultantInchargeId" formControlName = "ConsultantInchargeId">
+                  <ion-select-option value="1">Javahar Pachore</ion-select-option>
+                  <ion-select-option value="2">Vijay Bose</ion-select-option>
+                </ion-select>
+              </ion-item>
+  
+            <div *ngIf="submitted && f.ConsultantInchargeId.errors" class="invalid-feedback">
+              <div *ngIf="f.ConsultantInchargeId.errors.required">
+                Please select Consultant in charge
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <ion-label>Operating surgeon</ion-label>
+            <ion-item>
+              <ion-select placeholder="--Select--" id="OperatingSurgeonId" formControlName = "OperatingSurgeonId">
+                <ion-select-option value="1">Javahar Pachore</ion-select-option>
+                <ion-select-option value="2">Vijay Bose</ion-select-option>
+              </ion-select>
+            </ion-item>
+  
+          <div *ngIf="submitted && f.OperatingSurgeonId.errors" class="invalid-feedback">
+            <div *ngIf="f.OperatingSurgeonId.errors.required">
+              Please select operating surgeon
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">       
+        <ion-item>
+          <ion-checkbox class="form-control" color="primary"></ion-checkbox>
+          Same as above
+        </ion-item>   
+        </div>
+
+      <div class="form-group">
+        <ion-label>Operating surgeon grade</ion-label>
+      <ion-item>  
+        <ion-select placeholder="--Select--" id="OperatingSurgeonGrade" formControlName = "OperatingSurgeonGrade">
+          <ion-select-option value="1">Consultant</ion-select-option>
+          <ion-select-option value="2">Associate Consultant</ion-select-option>
+          <ion-select-option value="3">Senior Registrar</ion-select-option>
+          <ion-select-option value="4">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div *ngIf="submitted && f.OperatingSurgeonGrade.errors" class="invalid-feedback">
+        <div *ngIf="f.OperatingSurgeonGrade.errors.required">
+         Please select operating surgeon grade
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <ion-label>First assistant grade</ion-label>
+    <ion-item>  
+      <ion-select placeholder="--Select--" id="FirstAssistantGrade" formControlName = "FirstAssistantGrade">
+        <ion-select-option value="1">Consultant</ion-select-option>
+        <ion-select-option value="2">Associate Consultant</ion-select-option>
+        <ion-select-option value="3">Senior Registrar</ion-select-option>
+        <ion-select-option value="4">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="submitted && f.FirstAssistantGrade.errors" class="invalid-feedback">
+      <div *ngIf="f.FirstAssistantGrade.errors.required">
+       Please select First assistant grade
+      </div>
+    </div>
+  </div>
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" expand="block" >Submit</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="back" aria-disabled="true">
+      <ion-icon name="chevron-back" ></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="reorder-three"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="today"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="RedirectTo('create-edit-operation')">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

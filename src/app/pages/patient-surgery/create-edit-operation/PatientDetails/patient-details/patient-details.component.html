@@ -1,3 +1,111 @@
-<p>
-  patient-details works!
-</p>
+<ion-content>
+
+  <ion-header>
+
+    <ion-toolbar color='primary'>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title size="small">IJR Number : 100357</ion-title>
+      <ion-title>Patient Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<form [formGroup]="patientdetails" (ngSubmit)="onSubmit()">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        
+        <div padding>
+          <div class="form-group">
+            <ion-label>IJR patient consent obtained</ion-label>
+          <ion-item>
+            
+            <ion-select placeholder="Select One" id="ConsentObtained" formControlName = "ConsentObtained">
+              <ion-select-option value="Y">Yes</ion-select-option>
+              <ion-select-option value="N">No</ion-select-option>
+              <ion-select-option value="NR">Not Recorded</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <div *ngIf="submitted && f.ConsentObtained.errors" class="invalid-feedback">
+            <div *ngIf="f.ConsentObtained.errors.required">
+              IJR patient consent obtained is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <ion-label>Patient hospital ID</ion-label>
+        <ion-item>
+          <ion-input class="form-control" type="text" id="PatientHospitalId" formControlName = "PatientHospitalId"></ion-input>
+        </ion-item>
+
+        <div *ngIf="submitted && f.PatientHospitalId.errors" class="invalid-feedback">
+          <div *ngIf="f.PatientHospitalId.errors.required">
+            Patient hospital ID is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <ion-label>Body mass index</ion-label>
+      <ion-item>
+        <ion-input class="form-control" type="text" id="BMI" formControlName = "BMI"
+        [ngModel] = "BMI" name = "BMI"></ion-input>
+        <ion-button (click) = "OpenBMICalculation()">Calculate</ion-button>     
+      </ion-item>
+
+      <div *ngIf="submitted && f.BMI.errors" class="invalid-feedback">
+        <div *ngIf="f.BMI.errors.required">
+          BMI is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+    <ion-item>
+      <ion-checkbox class="form-control" color="primary"></ion-checkbox>
+      <ion-label>Not Available</ion-label>
+    </ion-item>
+    </div>
+
+    <app-bmi
+      [BMI]="BMI"
+      (BMIValue)="GetBMIValue($event)"
+    ></app-bmi>
+
+        </div>
+        <div padding>
+          <ion-button  size="large" type="submit" expand="block" >Submit</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+
+
+
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="back" aria-disabled="true">
+      <ion-icon name="chevron-back" ></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="reorder-three"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule">
+      <ion-icon name="today"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="RedirectTo('patient-identifier')">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+
