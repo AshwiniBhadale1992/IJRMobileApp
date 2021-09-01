@@ -18,9 +18,7 @@ import { PatientIdentifierComponent } from './pages/patient-surgery/create-edit-
 import { SurgeonDetailsComponent } from './pages/patient-surgery/create-edit-operation/PatientDetails/surgeon-details/surgeon-details.component';
 import { BMIComponent } from './pages/common/bmi/bmi.component';
 import { BMICalculation } from './providers/Helpers/BMICalculation';
-import { Child2Component } from './pages/common/child2/child2.component';
 import { CommonFunctions } from './providers/Helpers/commonFunctions';
-
 import { ManageSurgeonsPageModule } from './pages/manage-surgeons/manage-surgeons.module';
 import { SurgeonProfilePageModule } from './pages/system-functions/surgeon-profile/surgeon-profile.module';
 
@@ -46,7 +44,6 @@ import { SurgeonProfilePageModule } from './pages/system-functions/surgeon-profi
     ,PatientIdentifierComponent
     ,SurgeonDetailsComponent
     ,BMIComponent
-    ,Child2Component
   ],
   providers: [InAppBrowser, SplashScreen, StatusBar,BMICalculation,CommonFunctions],
   bootstrap: [AppComponent],
