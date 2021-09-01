@@ -13,6 +13,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 
+import { ManageSurgeonsPageModule } from './pages/manage-surgeons/manage-surgeons.module';
+import { SurgeonProfilePageModule } from './pages/system-functions/surgeon-profile/surgeon-profile.module';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -20,10 +23,15 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     IonicModule.forRoot(),
+    ManageSurgeonsPageModule,
+    SurgeonProfilePageModule,
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
-    })
+    },
+    )
+
+
   ],
   declarations: [AppComponent],
   providers: [InAppBrowser, SplashScreen, StatusBar],

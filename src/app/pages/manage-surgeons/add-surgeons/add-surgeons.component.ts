@@ -2,12 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-hospital-selection',
-  templateUrl: './hospital-selection.component.html',
-  styleUrls: ['./hospital-selection.component.scss'],
+  selector: 'app-add-surgeons',
+  templateUrl: './add-surgeons.component.html',
+  styleUrls: ['./add-surgeons.component.scss'],
 })
-export class HospitalSelectionComponent implements OnInit {
-
+export class AddSurgeonsComponent implements OnInit {
   @Input() model_title: string;
 
   constructor(

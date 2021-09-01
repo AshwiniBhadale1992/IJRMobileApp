@@ -15,6 +15,8 @@ const routes: Routes = [
       {
         path: '',
         children: [
+
+
           {
             path: 'login',
             loadChildren: () => import('./pages/auth/login/login.module').then(m => m.LoginPageModule)
@@ -40,6 +42,10 @@ const routes: Routes = [
             path: 'userprofile',
             loadChildren: () => import('./pages/system-functions/user-profile/user-profile.module').then(m => m.UserProfilePageModule)
           },
+          {
+            path: 'surgeonprofile',
+            loadChildren: () => import('./pages/system-functions/surgeon-profile/surgeon-profile.module').then(m => m.SurgeonProfilePageModule)
+          },
 
         ]
       },
@@ -47,9 +53,18 @@ const routes: Routes = [
         path: 'surgeon',
         children: [
           {
-            path: 'view-report',
+            path: 'surgeon-report',
             loadChildren: () => import('./pages/surgeon-report/surgeon-report.module').then(m => m.SurgeonReportPageModule)
+          },
+          {
+            path: 'view-report',
+            loadChildren: () => import('./pages/surgeon-report/view-surgeon-report/view-surgeon-report.module' ) .then(m => m.ViewSurgeonReportPageModule)
+          },
+          {
+            path: 'manage-surgeons',
+            loadChildren: () => import('./pages/manage-surgeons/manage-surgeons.module' ) .then(m => m.ManageSurgeonsPageModule)
           }
+
         ]
       },
     ]

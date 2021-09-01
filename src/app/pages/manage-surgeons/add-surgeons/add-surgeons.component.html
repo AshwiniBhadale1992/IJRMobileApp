@@ -1,0 +1,64 @@
+
+<ion-header translucent>
+  <ion-toolbar color='primary'>
+    <ion-title>New Surgeon Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModel()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+
+
+<ion-list>
+
+
+  <ion-item >
+    <ion-label position="floating">Lookup NCR No:</ion-label>
+    <ion-input type="text" required></ion-input>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" color="primary" >MCR No Lookup</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">ForeName</ion-label>
+    <ion-input type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Surname</ion-label>
+    <ion-input type="text" required></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label>Grade</ion-label>
+      <ion-select interface="action-sheet" class="custom-options">
+        <ion-select-option value="brown">Brown</ion-select-option>
+        <ion-select-option value="blonde">Blonde</ion-select-option>
+        <ion-select-option value="black">Black</ion-select-option>
+        <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+    </ion-item>
+</ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <ion-button type="button" expand="block">Cancel</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button  type="button" expand="block">Add Surgeon</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-hospital-selection',
-  templateUrl: './hospital-selection.component.html',
-  styleUrls: ['./hospital-selection.component.scss'],
+  selector: 'app-search-surgeons',
+  templateUrl: './search-surgeons.component.html',
+  styleUrls: ['./search-surgeons.component.scss'],
 })
-export class HospitalSelectionComponent implements OnInit {
+export class SearchSurgeonsComponent implements OnInit {
 
   @Input() model_title: string;
 
@@ -20,5 +20,7 @@ export class HospitalSelectionComponent implements OnInit {
     const close: string = "Modal Removed";
     await this.modalController.dismiss(close);
   }
+
+
 
 }

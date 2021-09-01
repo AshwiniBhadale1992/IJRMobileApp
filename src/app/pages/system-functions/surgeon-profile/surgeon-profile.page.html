@@ -1,9 +1,64 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>SurgeonProfile</ion-title>
+  <ion-toolbar color='primary'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Surgeon Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+  <ion-content style="font-size: 10px;">
+    <ion-segment value="1" [(ngModel)]="manageSurgeonSegment">
+    <ion-segment-button value="1" layout="icon-end"  >
+    <ion-label>Hospitals</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="2"  layout="icon-end" >
+      <ion-label>Personal Options</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+    <div [ngSwitch]="manageSurgeonSegment">
+      <ion-list *ngSwitchCase="'1'">
+        <ion-item >
+          <ion-label position="floating">Your Hospitals:</ion-label>
+          <ion-input type="text" required></ion-input>
+
+          <ion-row>
+            <ion-col>
+              <ion-button type="button" color="primary" (click)="openSearchSurgeon()" >Search For Hospitals</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+
+
+      </ion-list>
+      <ion-list *ngSwitchCase="'2'">
+        <app-personal-settings></app-personal-settings>
+      </ion-list>
+    </div>
+
+
 
 </ion-content>
+
+<ion-footer>
+  <div [ngSwitch]="manageSurgeonSegment">
+    <ion-row *ngSwitchCase="'1'">
+      <ion-col>
+        <ion-button type="button" color="primary"   expand="block" >Save</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngSwitchCase="'2'">
+      <ion-col>
+        <ion-button type="button" color="primary"  expand="block" >Save</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-footer>
